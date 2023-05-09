@@ -4,6 +4,9 @@ const initialState = {
   triedToLogIn: null,
   colorTheme: null,
   currentUser: null,
+  postgresURI: null,
+  currentTable: null,
+  allTables: {},
 };
 
 export const reducer = createSlice({
@@ -27,9 +30,18 @@ export const reducer = createSlice({
     setUser: (state, action) => {
       state.currentUser = action.payload;
     },
+    setPostgresURI: (state, action) => {
+      state.postgresURI = action.payload;
+    },
+    setCurrentTable: (state, action) => {
+      state.currentTable = action.payload;
+    },
+    setAllTables: (state, action) => {
+      state.allTables[state.currentTable] = action.payload;
+    },
   },
 });
 
-export const { loggingIn, tryingToLogIn, changeTheme, setUser } = reducer.actions;
+export const { loggingIn, tryingToLogIn, changeTheme, setUser, setPostgresURI, setCurrentTable, setAllTables } = reducer.actions;
 
 export default reducer.reducer;

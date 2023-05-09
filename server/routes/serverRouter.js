@@ -5,6 +5,9 @@ const sessionController = require('../controllers/sessionController');
 const cookieController = require('../controllers/cookieController');
 const fetchDBController = require('../controllers/fetchDBController');
 
+// ADD FUNCTIONALITY
+// see if username not found or password incorrect or username or password missing when signing up
+
 router.post(
   '/signup',
   userController.createUser,
@@ -33,7 +36,7 @@ router.get('/logout', (req, res) => {
   return res.clearCookie('cookieId').redirect('/');
 });
 
-router.get('/db', fetchDBController.fetchDB, (req, res) => {
+router.post('/db', fetchDBController.fetchDB, (req, res) => {
   return res.json(res.locals.data);
 });
 
