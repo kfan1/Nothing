@@ -14,8 +14,22 @@ router.post(
   }
 );
 
+router.post(
+  '/login',
+  userController.verifyUser,
+  cookieController.setSSIDCookie,
+  sessionController.startSession,
+  (req, res) => {
+    return res.json({ loggedIn: res.locals.signedIn });
+  }
+);
+
 router.get('/isLoggedIn', sessionController.isLoggedIn, (req, res) => {
   return res.json({ loggedIn: res.locals.signedIn });
+});
+
+router.get('/logout', (req, res) => {
+  return res.clearCookie('cookieId').redirect('/');
 });
 
 module.exports = router;

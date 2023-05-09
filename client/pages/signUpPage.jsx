@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { tryingToLogIn } from '../reducers/reducer';
+import { tryingToLogIn, loggingIn } from '../reducers/reducer';
 import { useNavigate } from 'react-router-dom';
 
 export default function signUpPage() {
@@ -19,7 +19,10 @@ export default function signUpPage() {
       .then((res) => res.json())
       .then((res) => {
         dispatch(tryingToLogIn(res.loggedIn));
-        if (res.loggedIn) navigate('/');
+        if (res.loggedIn) {
+          dispatch(loggingIn(res.loggedIn));
+          navigate('/');
+        }
       });
   };
 
@@ -46,7 +49,7 @@ export default function signUpPage() {
           {userError}
           <input
             type='submit'
-            value='Submit'
+            value='Sign Up'
             onClick={(event) => {
               event.preventDefault();
               login(document.querySelector('#username').value, document.querySelector('#password').value);

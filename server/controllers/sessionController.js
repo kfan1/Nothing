@@ -11,10 +11,12 @@ sessionController.isLoggedIn = (req, res, next) => {
 
 sessionController.startSession = (req, res, next) => {
   if (res.locals.signedIn) {
-    Session.create({ cookieId: res.locals.ssid }).then(() => {
-      res.cookie('cookieId', res.locals.ssid, { httpOnly: true });
-      return next();
-    });
+    Session.findOneAndUpdate({ cookieId: res.locals.ssid }, { cookieId: res.locals.ssid }, { upsert: true }).then(
+      () => {
+        res.cookie('cookieId', res.locals.ssid, { httpOnly: true });
+        return next();
+      }
+    );
   } else return next();
 };
 
