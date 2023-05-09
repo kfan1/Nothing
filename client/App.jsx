@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
-  const loggedIn = useSelector((state) => state.reducer.loggedIn);
 
   useEffect(() => {
     async function myFunction() {
