@@ -8,7 +8,7 @@ body {
   background-color: $superLightGrey;
 }
 
-/* NavBar Styles */
+//  NavBar Styles
 .navbar {
   padding: 0.4% 3%;
   background-image: linear-gradient(rgb(0, 51, 146), rgb(5, 69, 187));
@@ -77,4 +77,10 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+// Main Div
+.main-div {
+  padding-left: 5%;
+  padding-left: 5%;
 }
