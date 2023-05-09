@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import WelcomeScreen from '../components/publicComponents/welcomeScreen.jsx';
 
-export default function publicContainer(){
+export default function publicContainer() {
   return (
     <div>
-      PUBLIC
+      <WelcomeScreen />
     </div>
-  )
+  );
 }

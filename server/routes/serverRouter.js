@@ -3,6 +3,7 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 const sessionController = require('../controllers/sessionController');
 const cookieController = require('../controllers/cookieController');
+const fetchDBController = require('../controllers/fetchDBController');
 
 router.post(
   '/signup',
@@ -25,11 +26,15 @@ router.post(
 );
 
 router.get('/isLoggedIn', sessionController.isLoggedIn, (req, res) => {
-  return res.json({ loggedIn: res.locals.signedIn });
+  return res.json({ loggedIn: res.locals.signedIn, id: req.cookies.cookieId });
 });
 
 router.get('/logout', (req, res) => {
   return res.clearCookie('cookieId').redirect('/');
+});
+
+router.get('/db', fetchDBController.fetchDB, (req, res) => {
+  return res.json(res.locals.data);
 });
 
 module.exports = router;

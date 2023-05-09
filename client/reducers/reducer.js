@@ -3,6 +3,7 @@ const initialState = {
   loggedIn: null,
   triedToLogIn: null,
   colorTheme: null,
+  currentUser: null,
 };
 
 export const reducer = createSlice({
@@ -21,11 +22,14 @@ export const reducer = createSlice({
       state.triedToLogIn = action.payload;
     },
     changeTheme: (state, action) => {
-      state.colorTheme = action.payload
+      state.colorTheme = action.payload;
+    },
+    setUser: (state, action) => {
+      state.currentUser = action.payload;
     },
   },
 });
 
-export const { loggingIn, tryingToLogIn, changeTheme } = reducer.actions;
+export const { loggingIn, tryingToLogIn, changeTheme, setUser } = reducer.actions;
 
 export default reducer.reducer;

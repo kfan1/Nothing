@@ -13,7 +13,7 @@ sessionController.startSession = (req, res, next) => {
   if (res.locals.signedIn) {
     Session.findOneAndUpdate({ cookieId: res.locals.ssid }, { cookieId: res.locals.ssid }, { upsert: true }).then(
       () => {
-        res.cookie('cookieId', res.locals.ssid, { httpOnly: true });
+        res.cookie('cookieId', res.locals.ssid, { httpOnly: true, maxAge: 600000, secure: true });
         return next();
       }
     );

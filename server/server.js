@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const apiRouter = require('./routes/api');
+const serverRouter = require('./routes/serverRouter');
 const app = express();
 
 const cookieParser = require('cookie-parser');
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/assets', express.static(path.resolve(__dirname, '../client/assets')));
 
-app.use('/server', apiRouter);
+app.use('/server', serverRouter);
 
 app.use('*', (req, res) => res.redirect('/'));
 

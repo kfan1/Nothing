@@ -7,7 +7,7 @@ import SignUp from './pages/signUpPage.jsx';
 import LogIn from './pages/logInPage.jsx';
 import About from './pages/aboutPage.jsx';
 import './stylesheets/styles.scss';
-import { loggingIn } from './reducers/reducer.js';
+import { loggingIn, setUser } from './reducers/reducer.js';
 import { useDispatch } from 'react-redux';
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         .then((res) => res.json())
         .then((res) => {
           dispatch(loggingIn(res.loggedIn));
+          dispatch(setUser(res.id));
         });
     }
     myFunction();
