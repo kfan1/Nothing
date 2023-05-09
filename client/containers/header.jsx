@@ -9,12 +9,16 @@ export default function header() {
   const loggedIn = useSelector((state) => state.reducer.loggedIn);
 
   const navlinks = [
-    <NavLink nav='About' link='/about' />,
-    <NavLink nav='Projects' link='https://www.github.com/kfan1' />,
+    <NavLink nav='About' link='/about' key='about' />,
+    <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
   ];
-  if (!loggedIn) navlinks.push(<NavLink nav='Sign Up' link='/signup' />, <NavLink nav='Log In' link='/login' />);
-  else navlinks.push(<NavLink nav='Log out' link='/logout' />);
-  navlinks.push(<ThemeColor />);
+  if (!loggedIn)
+    navlinks.push(
+      <NavLink nav='Sign Up' link='/signup' key='signup' />,
+      <NavLink nav='Log In' link='/login' key='login' />
+    );
+  else navlinks.push(<NavLink nav='Log out' link='/logout' key='logout' />);
+  navlinks.push(<ThemeColor key='themeColor' />);
 
   return (
     <div>
@@ -23,7 +27,7 @@ export default function header() {
           <Link className='navbar-brand' to='/'>
             <img className='homeclick' src='/assets/images/data-science.png' />
           </Link>
-          <CollapsedButton />
+          <CollapsedButton key='collapsedButton' />
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
             <ul className='navbar-nav ms-auto'>{navlinks}</ul>
           </div>
