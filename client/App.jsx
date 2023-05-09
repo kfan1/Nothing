@@ -8,7 +8,7 @@ import LogIn from './pages/logInPage.jsx';
 import About from './pages/aboutPage.jsx';
 import './stylesheets/styles.scss';
 import { loggingIn } from './reducers/reducer.js';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();

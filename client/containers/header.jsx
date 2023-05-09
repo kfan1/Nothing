@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import NavLink from '../components/headerComponents/navLink.jsx';
 import CollapsedButton from '../components/headerComponents/collapsedButton.jsx';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ThemeColor from '../components/headerComponents/themeColor.jsx';
 
 export default function header() {
-  const triedToLogIn = useSelector((state) => state.reducer.triedToLogIn);
   const loggedIn = useSelector((state) => state.reducer.loggedIn);
 
   const navlinks = [
@@ -14,6 +14,8 @@ export default function header() {
   ];
   if (!loggedIn) navlinks.push(<NavLink nav='Sign Up' link='/signup' />, <NavLink nav='Log In' link='/login' />);
   else navlinks.push(<NavLink nav='Log out' link='/logout' />);
+  navlinks.push(<ThemeColor />);
+
   return (
     <div>
       <nav className='navbar navbar-expand-lg' data-bs-theme='light'>

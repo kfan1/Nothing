@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   loggedIn: null,
   triedToLogIn: null,
+  colorTheme: null,
 };
 
 export const reducer = createSlice({
@@ -17,11 +18,14 @@ export const reducer = createSlice({
       state.loggedIn = action.payload;
     },
     tryingToLogIn: (state, action) => {
-      state.triedToLogIn = action.payload
-    }
+      state.triedToLogIn = action.payload;
+    },
+    changeTheme: (state, action) => {
+      state.colorTheme = action.payload
+    },
   },
 });
 
-export const { loggingIn, tryingToLogIn } = reducer.actions;
+export const { loggingIn, tryingToLogIn, changeTheme } = reducer.actions;
 
 export default reducer.reducer;

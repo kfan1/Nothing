@@ -1,6 +1,6 @@
 $primary: rgb(46, 46, 46);
 $secondary: rgb(59, 59, 59);
-$tertiary: rgb(173, 173, 173);
+$tertiary: rgb(201, 201, 201);
 $superLightGrey: rgb(241, 241, 241);
 $white: rgb(255, 255, 255);
 
@@ -8,9 +8,26 @@ body {
   background-color: $superLightGrey;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $secondary;
+    color: $white;
+  }
+}
+
+body[theme="dark"] {
+  background-color: $secondary;
+  color: $white;
+}
+
+body[theme="light"] {
+  background-color: $superLightGrey;
+  color: $primary;
+}
+
 //  NavBar Styles
 .navbar {
-  padding: 0.4% 3%;
+  padding: 0.4% 10%;
   background-image: linear-gradient(rgb(0, 51, 146), rgb(5, 69, 187));
   font-weight: 600;
 }
@@ -39,6 +56,11 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .dropdown-center {
+    margin-left: 46%;
+    margin-right: auto;
+  }
 }
 
 .nav-link:hover {
@@ -56,6 +78,18 @@ body {
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(241, 241, 241)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu {
+  background-color: $tertiary;
+  max-width: 20px;
+}
+
+.fa-solid {
+  padding-right: 5px;
+}
+.fa-check {
+  padding-left: 10px;
 }
 
 // Signup Page Styles

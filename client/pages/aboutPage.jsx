@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function aboutPage() {
   return (
-    <div>
+    <div className='main-div'>
       about!
     </div>
   );

@@ -36,7 +36,7 @@ export default function logInPage() {
     );
 
   return (
-    <div>
+    <div className='main-div'>
       <form>
         <div className='mb-3'>
           <label className='form-label'>Username</label>
