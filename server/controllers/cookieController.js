@@ -1,15 +1,14 @@
-const cookieController = {};
 const User = require('../models/userModel');
 
+const cookieController = {};
 
-cookieController.setSSIDCookie = async (req, res, next) => {
-  User.findOne({ username: req.body.username })
-    .then(async (response) => {
+cookieController.setSSIDCookie = (req, res, next) => {
+  if (res.locals.signedIn) {
+    User.findOne({ username: req.body.username }).then((response) => {
       res.locals.ssid = response._id;
-      res.cookie('ssid', res.locals.ssid, { httpOnly: true });
-    })
-    .catch(() => next('error'));
+      return next();
+    });
+  } else return next();
 };
-
 
 module.exports = cookieController;

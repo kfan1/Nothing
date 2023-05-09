@@ -2,13 +2,20 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 const sessionController = require('../controllers/sessionController');
+const cookieController = require('../controllers/cookieController');
 
-router.post('/signup', userController.createUser, (req, res) => {
-  return res.json({ loggedIn: res.locals.signedIn });
-});
+router.post(
+  '/signup',
+  userController.createUser,
+  cookieController.setSSIDCookie,
+  sessionController.startSession,
+  (req, res) => {
+    return res.json({ loggedIn: res.locals.signedIn });
+  }
+);
 
 router.get('/isLoggedIn', sessionController.isLoggedIn, (req, res) => {
-  res.json({ loggedIn: res.locals.signedIn });
+  return res.json({ loggedIn: res.locals.signedIn });
 });
 
 module.exports = router;

@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import NavLink from '../components/headerComponents/navLink.jsx';
 import CollapsedButton from '../components/headerComponents/collapsedButton.jsx';
 import { useSelector } from 'react-redux';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 export default function header() {
   const triedToLogIn = useSelector((state) => state.reducer.triedToLogIn);
+  const loggedIn = useSelector((state) => state.reducer.loggedIn);
 
   useEffect(() => {
     document.querySelectorAll('.nav-link').forEach((element) => {
@@ -18,7 +18,8 @@ export default function header() {
     <NavLink nav='About' link='/about' />,
     <NavLink nav='Projects' link='https://www.github.com/kfan1' />,
   ];
-  if (!triedToLogIn) navlinks.push(<NavLink nav='Sign Up' link='/signup' />, <NavLink nav='Log In' link='/login' />);
+  if (!triedToLogIn && !loggedIn)
+    navlinks.push(<NavLink nav='Sign Up' link='/signup' />, <NavLink nav='Log In' link='/login' />);
 
   return (
     <div>
