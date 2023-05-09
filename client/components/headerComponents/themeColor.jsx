@@ -24,7 +24,7 @@ export default function themeToggler() {
   }
 
   return (
-    <div className='dropdown-center'>
+    <div className='dropdown'>
       <a className='nav-link dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
         {currTheme}
       </a>

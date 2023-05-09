@@ -15,12 +15,12 @@ body {
   }
 }
 
-body[theme="dark"] {
+body[theme='dark'] {
   background-color: $secondary;
   color: $white;
 }
 
-body[theme="light"] {
+body[theme='light'] {
   background-color: $superLightGrey;
   color: $primary;
 }
@@ -80,6 +80,10 @@ body[theme="light"] {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(241, 241, 241)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.dropdown {
+  margin-top: 3px;
+}
+
 .dropdown-menu {
   background-color: $tertiary;
   max-width: 20px;
@@ -90,6 +94,10 @@ body[theme="light"] {
 }
 .fa-check {
   padding-left: 10px;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
 }
 
 // Signup Page Styles
@@ -117,4 +125,21 @@ body[theme="light"] {
 .main-div {
   padding-left: 5%;
   padding-left: 5%;
+  height: 85%;
+}
+
+// Footer
+.bottom {
+  background-color: $tertiary;
+  padding: 1%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.bottom-links {
+  padding: 4px;
+}
+
+.copyright {
+  margin-bottom: 0;
 }
