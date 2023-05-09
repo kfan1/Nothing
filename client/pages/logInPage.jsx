@@ -28,12 +28,7 @@ export default function logInPage() {
 
   let userError;
 
-  if (triedToLogIn === false)
-    userError = (
-      <p className='error'>
-        Username/Password not found
-      </p>
-    );
+  if (triedToLogIn === false) userError = <p className='error'>Username/Password not found</p>;
 
   return (
     <div className='main-div'>
@@ -46,6 +41,8 @@ export default function logInPage() {
           <label className='form-label'>Password</label>
           <input placeholder='password' type='password' className='form-control' id='password' />
           {userError}
+        </div>
+        <div>
           <input
             type='submit'
             value='Log In'

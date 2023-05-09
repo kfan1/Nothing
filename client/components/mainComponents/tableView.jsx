@@ -21,9 +21,11 @@ export default function tableView({ postgresURI }) {
     })
       .then((res) => res.json())
       .then((res) => {
-        newTable.push(<TheKeys tableKeys={Object.keys(res[0])} key={JSON.stringify(Object.keys(res[0]))} />);
+        newTable.push(
+          <TheKeys tableKeys={Object.keys(res[0])} key={JSON.stringify(Object.keys(res[0]))}  />
+        );
         res.forEach((el) => {
-          newTable.push(<TheTable tableValues={el} key={JSON.stringify(el)} />);
+          newTable.push(<TheTable tableValues={el} key={JSON.stringify(el)}  />);
         });
       })
       .then(() => {
@@ -39,15 +41,12 @@ export default function tableView({ postgresURI }) {
 
   if (allTables[currentTable]) {
     let gridWidth = '';
-    console.log(allTables[currentTable][0].key);
     allTables[currentTable][0].key.split(',').forEach(() => (gridWidth += ' 1fr'));
     return (
       <div>
         <NewTableForm fetchDB={fetchDB} postgresURI={postgresURI} key={postgresURI} />
         <h1>{currentTable}</h1>
-        <div className='theActualTableFinally' style={{ gridTemplateColumns: gridWidth }}>
-          {allTables[currentTable]}
-        </div>
+        <table className='theActualTableFinally'>{allTables[currentTable]}</table>
       </div>
     );
   } else {

@@ -2,13 +2,28 @@ import React from 'react';
 
 export default function table({ tableValues }) {
   const tableTable = [];
+  const rowID = tableValues._id
   Object.keys(tableValues).forEach((value) => {
+    const newId = typeof tableValues[value] === 'string' ? tableValues[value].replaceAll(' ', '').replaceAll('/', '').replaceAll(',', '') : '';
     tableTable.push(
-      <div>
-        <p>{tableValues[value]}</p>
-      </div>
+      <td>
+        <button
+          className='tableButton'
+          id={'k'+rowID+newId}
+          onClick={() => {
+            console.log(newId)
+            document
+              .querySelector(`#${'k'+rowID+newId}`)
+              .setAttribute(
+                'selected',
+                !JSON.parse(document.querySelector(`#${'k'+rowID+newId}`).getAttribute('selected'))
+              );
+          }}>
+          {tableValues[value]}
+        </button>
+      </td>
     );
-  })
+  });
 
-  return <div>{tableTable}</div>;
+  return <tr>{tableTable}</tr>;
 }

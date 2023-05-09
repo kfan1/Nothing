@@ -4,7 +4,7 @@ import { setPostgresURI } from '../../reducers/reducer';
 
 export default function welcome() {
   const dispatch = useDispatch();
- 
+
   // set uri state to submitted uri state
   // fetch all data and store locally?
   // fetch request to my backend
@@ -20,6 +20,8 @@ export default function welcome() {
         <div className='mb-3'>
           <label className='form-label'>Database URI</label>
           <input placeholder='uri' type='text' className='form-control URI-form-control' id='dbURIInput' />
+        </div>
+        <div>
           <input
             type='submit'
             value='Submit'

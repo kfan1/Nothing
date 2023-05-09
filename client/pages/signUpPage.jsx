@@ -26,7 +26,6 @@ export default function signUpPage() {
       });
   };
 
-
   let userError;
 
   if (triedToLogIn === false)
@@ -48,6 +47,8 @@ export default function signUpPage() {
           <label className='form-label'>Password</label>
           <input placeholder='password' type='password' className='form-control' id='password' />
           {userError}
+        </div>
+        <div>
           <input
             type='submit'
             value='Sign Up'

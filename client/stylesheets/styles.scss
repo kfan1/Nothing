@@ -111,6 +111,10 @@ body[theme='light'] {
 }
 
 @media screen and (max-width: 990px) {
+  .main-div {
+    text-align: center;
+  }
+  
   .mb-3 {
     text-align: center;
   }
@@ -138,17 +142,55 @@ body[theme='light'] {
 }
 
 // Welcome Screen
-
 .welcomeToNothing {
   height: 100%;
 }
 
 // User Screen
 .URI-form-control {
-  width: 80%
+  width: 80%;
+}
+
+// Main Div
+.main-div {
+  padding: 3%;
 }
 
 // table styling
 .theActualTableFinally {
-  display: grid;
+}
+
+.tableButton {
+  width: 100%;
+  border: none;
+}
+
+.tableButtonKey {
+  width: 100%;
+  border: none;
+  font-weight: 800;
+}
+
+body[theme='light'] .tableButton {
+  background-color: $tertiary;
+}
+
+body[theme='light'] .tableButtonKey {
+  background-color: $tertiary;
+}
+
+.tableButtonKey[selected='true'] {
+  background-color: yellow;
+}
+
+.tableButton[selected='true'] {
+  background-color: yellow;
+}
+
+body[theme='light'] .tableButton[selected='true'] {
+  background-color: yellow;
+}
+
+body[theme='light'] .tableButtonKey[selected='true'] {
+  background-color: yellow;
 }
