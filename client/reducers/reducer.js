@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+
+
 const initialState = {
   loggedIn: null,
   triedToLogIn: null,
@@ -7,6 +9,7 @@ const initialState = {
   postgresURI: null,
   currentTable: null,
   allTables: {},
+  currentSelected: []
 };
 
 export const reducer = createSlice({

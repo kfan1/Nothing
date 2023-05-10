@@ -39,6 +39,7 @@ export default function tableView({ postgresURI }) {
      */
   }
 
+
   if (allTables[currentTable]) {
     let gridWidth = '';
     allTables[currentTable][0].key.split(',').forEach(() => (gridWidth += ' 1fr'));
