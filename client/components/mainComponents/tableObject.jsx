@@ -1,11 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentSelected } from '../../reducers/reducer';
 
 // ADD FUNCTIONALITY
 // change all these replaceAlls to regex
 
-export default function table({ tableValues }) {
+export default function table({ tableValues, tableName }) {
   const tableTable = [];
   const rowID = tableValues._id;
+  const dispatch = useDispatch();
+
   Object.keys(tableValues).forEach((value) => {
     const valueID =
       typeof value === 'string'
@@ -47,6 +51,7 @@ export default function table({ tableValues }) {
                 'selected',
                 !JSON.parse(document.querySelector(`#${'k' + rowID + newId + valueID}`).getAttribute('selected'))
               );
+            dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: value, id: tableValues._id, value: tableValues[value]})));
           }}>
           {tableValues[value]}
         </button>

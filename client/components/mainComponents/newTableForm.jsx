@@ -1,6 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentSelected } from '../../reducers/reducer';
 
 export default function newTableForm({ fetchDB, postgresURI }) {
+  const dispatch = useDispatch();
+  
   return (
     <div className='tableView'>
       <form>
@@ -15,6 +19,7 @@ export default function newTableForm({ fetchDB, postgresURI }) {
             onClick={(event) => {
               event.preventDefault();
               fetchDB(postgresURI, document.querySelector('#newTableInput').value);
+              dispatch(setCurrentSelected('delete'));
             }}
           />
         </div>

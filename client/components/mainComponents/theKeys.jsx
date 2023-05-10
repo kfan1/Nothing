@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setCurrentSelected } from '../../reducers/reducer';
 
-export default function theKeys({ tableKeys }) {
+export default function theKeys({ tableKeys, tableName }) {
   const tableTop = [];
+  const dispatch = useDispatch();
 
   tableKeys.forEach((key) => {
     const newId =
@@ -30,6 +33,7 @@ export default function theKeys({ tableKeys }) {
                 'selected',
                 !JSON.parse(document.querySelector(`#${'k' + newId}`).getAttribute('selected'))
               );
+            dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: key, id: '*' })));
           }}>
           {key}
         </button>

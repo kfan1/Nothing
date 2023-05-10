@@ -1,5 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
   loggedIn: null,
@@ -9,7 +8,8 @@ const initialState = {
   postgresURI: null,
   currentTable: null,
   allTables: {},
-  currentSelected: []
+  currentSelected: [],
+  currentQuery: null,
 };
 
 export const reducer = createSlice({
@@ -42,9 +42,28 @@ export const reducer = createSlice({
     setAllTables: (state, action) => {
       state.allTables[state.currentTable] = action.payload;
     },
+    setCurrentSelected: (state, action) => {
+      if (action.payload === 'delete') state.currentSelected = [];
+      else if (state.currentSelected.includes(action.payload))
+        state.currentSelected.splice(state.currentSelected.indexOf(action.payload), 1);
+      else state.currentSelected.push(action.payload);
+    },
+    setCurrentQuery: (state) => {
+      state.currentQuery = JSON.stringify(state.currentSelected);
+    },
   },
 });
 
-export const { loggingIn, tryingToLogIn, changeTheme, setUser, setPostgresURI, setCurrentTable, setAllTables } = reducer.actions;
+export const {
+  loggingIn,
+  tryingToLogIn,
+  changeTheme,
+  setUser,
+  setPostgresURI,
+  setCurrentTable,
+  setAllTables,
+  setCurrentSelected,
+  setCurrentQuery,
+} = reducer.actions;
 
 export default reducer.reducer;
