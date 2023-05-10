@@ -5,17 +5,20 @@ import TableView from '../components/mainComponents/tableView';
 
 
 export default function main() {
-  const postgresURI = useSelector((state) => state.reducer.postgresURI);
+  const postgresURI = useSelector((state) => state.reducer.postgresURI);  
 
-  if(postgresURI !== null) {
+ 
+
+  if (postgresURI !== null) {
     return (
-      <TableView postgresURI={postgresURI} />
-    )
+      <div className='main-div'>        
+        <TableView postgresURI={postgresURI} />
+      </div>
+    );
   }
   return (
-    <div>
+    <div className='main-div'>
       <UserScreen />
     </div>
   );
-
 }

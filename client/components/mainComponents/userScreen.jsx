@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setPostgresURI } from '../../reducers/reducer';
 
+
 export default function welcome() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();   
 
   // set uri state to submitted uri state
   // fetch all data and store locally?

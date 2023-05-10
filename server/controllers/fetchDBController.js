@@ -7,13 +7,13 @@ const fetchDB = {};
 
 fetchDB.fetchDB = (req, res, next) => {
   const pool = new Pool({
-    // connectionString: req.body.URI
+    // connectionString: req.body.URI,
     connectionString: 'postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr',
   });
 
   pool
-    // .query(`SELECT * FROM ${req.body.tableName}`)
-    .query(`SELECT * FROM people`)
+    .query(`SELECT * FROM ${req.body.tableName}`)
+    // .query(`SELECT * FROM people`)
     .then((response) => {
       res.locals.data = response.rows;
     })
@@ -24,5 +24,3 @@ fetchDB.fetchDB = (req, res, next) => {
 };
 
 module.exports = fetchDB;
-
-('postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr');

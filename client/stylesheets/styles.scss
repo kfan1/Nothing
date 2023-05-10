@@ -100,6 +100,54 @@ body[theme='light'] {
   cursor: pointer;
 }
 
+// sidebar styling
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(rgb(108, 157, 247), rgb(152, 62, 255), rgb(0, 51, 146));
+  overflow-x: hidden;
+  padding-top: 120px;
+}
+
+.sidenavlink {
+  padding-left: 10%;
+  margin-left: 0%;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: $primary;
+  display: block;
+}
+
+.sidenavlink:hover {
+  color: $white;
+}
+
+.sidenav-drop{
+  padding-left: 30px;
+}
+
+.sidenav-drop:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: $white;
+}
+
+.sidenav-menu {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+// Main div
+.main-div {
+  padding-left: 250px;
+  padding-top: 100px;
+  min-height: 100%;
+}
+
 // Signup Page Styles
 .error {
   font-size: 14px;
@@ -111,10 +159,15 @@ body[theme='light'] {
 }
 
 @media screen and (max-width: 990px) {
+  .sidenav {
+    display: none;
+  }
+
   .main-div {
     text-align: center;
+    padding-left: 0;
   }
-  
+
   .mb-3 {
     text-align: center;
   }
@@ -127,10 +180,12 @@ body[theme='light'] {
 
 // Footer
 .bottom {
+  width: 100%;
   background-color: $tertiary;
   padding: 1%;
   text-align: center;
   font-size: 12px;
+  margin-top: 3%;
 }
 
 .bottom-links {
@@ -143,6 +198,8 @@ body[theme='light'] {
 
 // Welcome Screen
 .welcomeToNothing {
+  padding-top: 100px;
+  text-align: center;
   height: 100%;
 }
 
@@ -151,22 +208,19 @@ body[theme='light'] {
   width: 80%;
 }
 
-// Main Div
-.main-div {
-  padding: 3%;
-}
-
 // table styling
 .theActualTableFinally {
 }
 
 .tableButton {
   width: 100%;
+  min-height: 65px;
   border: none;
 }
 
 .tableButtonKey {
   width: 100%;
+  min-height: 40px;
   border: none;
   font-weight: 800;
 }

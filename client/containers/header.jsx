@@ -22,7 +22,7 @@ export default function header() {
 
   return (
     <div>
-      <nav className='navbar navbar-expand-lg' data-bs-theme='light'>
+      <nav className='navbar fixed-top navbar-expand-lg' data-bs-theme='light'>
         <div className='container-fluid'>
           <Link className='navbar-brand' to='/'>
             <img className='homeclick' src='/assets/images/data-science.png' />
