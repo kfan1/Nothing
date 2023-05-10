@@ -16,7 +16,6 @@ export default function generateQuery() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         dispatch(setCurrentQuery(res.query));
       });
   }

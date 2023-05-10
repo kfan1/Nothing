@@ -24,3 +24,6 @@ app.use('*', (req, res) => res.redirect('/'));
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
 });
+
+
+// TODO: add error handling for all promises

@@ -8,7 +8,7 @@ export default function clearSelectionButton() {
   return (
     <input
       type='submit'
-      className='topTableButton'
+      className='topTableButton clearSelectionButton'
       value='Clear Selection'
       onClick={() => {
         dispatch(setCurrentSelected('delete'));

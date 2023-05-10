@@ -45,8 +45,7 @@ export default function tableView({ postgresURI }) {
      */
   }
 
-  // ADD FUNCTIONALITY
-  // @TODO create a clear selection button
+  // TODO: add error handling for all promises
 
   // ADD functionality select from multiple tables and create join queries
 

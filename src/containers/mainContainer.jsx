@@ -7,8 +7,8 @@ import TableView from '../components/mainComponents/tableView';
 export default function main() {
   const postgresURI = useSelector((state) => state.reducer.postgresURI);  
   
-  // ADD FEATURE
-  // @TODO add feature to add new databases
+
+  /**@TODO save databases and tables and queries in seperate database */
 
   if (postgresURI !== null) {
     return (

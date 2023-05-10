@@ -12,7 +12,7 @@ export default function welcome() {
   // split the url and get tables into two separate calls
   // so that we can get all the tables that the user wants because I don't think theres a select all tables
 
-  // ADD FEATURE:
+  // ADD FUNCTIONALITY:
   // save URI and table data into local database for easy access on new session
 
   return (
