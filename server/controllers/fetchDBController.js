@@ -15,8 +15,8 @@ fetchDB.fetchDB = (req, res, next) => {
   });
 
   pool
-    // .query(`SELECT * FROM ${req.body.tableName}`)
-    .query(`SELECT * FROM people`)
+    .query(`SELECT * FROM ${req.body.tableName}`)
+    // .query(`SELECT * FROM people`)
     .then((response) => {
       res.locals.data = response.rows;
     })

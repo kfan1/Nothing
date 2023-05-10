@@ -117,28 +117,27 @@ body[theme='light'] {
   padding-left: 10%;
   margin-left: 0%;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 150%;
   font-weight: 700;
   color: $primary;
   display: block;
 }
 
-.sidenavlink:hover {
-  color: $white;
+.sidenav-menu {
+  color: $primary;
 }
 
-.sidenav-drop{
-  padding-left: 30px;
+.sidenav-drop {
+  font-size: 150%;
+  font-weight: 500;
 }
 
 .sidenav-drop:hover {
-  background-color: rgba(255, 255, 255, 0);
   color: $white;
 }
 
-.sidenav-menu {
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
+li {
+  list-style-type: none;
 }
 
 // Main div
@@ -179,13 +178,19 @@ body[theme='light'] {
 }
 
 // Footer
+.bottom-hr{
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  margin-bottom: 5px;
+}
+
 .bottom {
-  width: 100%;
-  background-color: $tertiary;
   padding: 1%;
   text-align: center;
   font-size: 12px;
-  margin-top: 3%;
+  margin-top: 0;
 }
 
 .bottom-links {

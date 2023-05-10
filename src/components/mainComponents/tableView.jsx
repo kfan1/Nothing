@@ -68,6 +68,9 @@ export default function tableView({ postgresURI }) {
     return (
       <div>
         <NewTableForm fetchDB={fetchDB} postgresURI={postgresURI} key={postgresURI} />
+        <div style={{ marginLeft: '-10px' }}>
+          <AddDBButton />
+        </div>
       </div>
     );
   }

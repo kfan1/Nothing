@@ -25,12 +25,10 @@ export default function sideBar() {
 
   return (
     <div className='sidenav'>
-      <div className='dropdown'>
-        <a className='nav-link dropdown sidenavlink' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+        <h3 className='sidenavlink'>
           Your Tables
-        </a>
-        <ul className='dropdown-menu sidenav-menu'>{navlinks}</ul>
-      </div>
+        </h3>
+        <ul className='sidenav-menu'>{navlinks}</ul>
     </div>
   );
 }
