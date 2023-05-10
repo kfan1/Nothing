@@ -54,7 +54,7 @@ export default function tableView({ postgresURI }) {
     return (
       <div>
         <NewTableForm fetchDB={fetchDB} postgresURI={postgresURI} key={postgresURI} />
-        <p>{currentQuery}</p>
+        <p className='theQuery'>{currentQuery}</p>
         <GenerateQueryButton />
         <AddDBButton />
         <ClearSelectionButton />

@@ -108,7 +108,7 @@ body[theme='light'] {
   z-index: 0;
   top: 0;
   left: 0;
-  background-image: linear-gradient(rgb(108, 157, 247), rgb(152, 62, 255), rgb(0, 51, 146));
+  background-color: rgba(84, 138, 255, 0.5);
   overflow-x: hidden;
   padding-top: 120px;
 }
@@ -134,6 +134,42 @@ body[theme='light'] {
 
 .sidenav-drop:hover {
   color: $white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidenavlink {
+    color: $white;
+  }
+  .sidenav-menu {
+    color: $white;
+  }
+  .sidenav-drop:hover {
+    color: $white;
+  }
+}
+
+body[theme='dark'] {
+  .sidenavlink {
+    color: $white;
+  }
+  .sidenav-menu {
+    color: $white;
+  }
+  .sidenav-drop:hover {
+    color: $primary;
+  }
+}
+
+body[theme='light'] {
+  .sidenavlink {
+    color: $primary;
+  }
+  .sidenav-menu {
+    color: $primary;
+  }
+  .sidenav-drop:hover {
+    color: $white;
+  }
 }
 
 li {
@@ -296,6 +332,14 @@ li {
 }
 
 // table styling
+.theActualTableFinally{
+  margin-right: 20px;
+}
+.theQuery {
+  font-weight: 600;
+  font-size: 20px;
+}
+
 .tableButton {
   width: 100%;
   min-height: 65px;
