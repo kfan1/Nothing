@@ -38,7 +38,6 @@ fetchQuery.fetchQuery = (req, res, next) => {
   res.locals.query = res.locals.query.slice(0, res.locals.query.length - 2);
   res.locals.query += ')';
   if (ids.has('*')) res.locals.query = res.locals.query.slice(0, res.locals.query.indexOf(' WHERE'));
-  console.log(res.locals.query + '!!');
 
   return next();
 };

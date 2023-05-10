@@ -4,6 +4,10 @@ const fetchDB = {};
 
 ('mongodb+srv://kevinlifan:8-Ud_2k92zGQJTy@usercluster.7ygqnuk.mongodb.net/?retryWrites=true&w=majority');
 ('postgres://dugiykym:qJm5oZ_XWSnzaXF59SxFNBw6JBk1ihwB@drona.db.elephantsql.com/dugiykym');
+// too many of the same name and keys, maybe created wrong wrongs?
+// oohhh i know cause the id is not _id for this powerball, its sid, rip
+
+// TODO add unique ids! all the ideas for the buttons are not unique! maybe use random.number generator?
 
 // ADD FUNCTIONALITY
 // table not found (add functionality see if table or URI incorrect)

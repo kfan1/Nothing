@@ -25,7 +25,7 @@ export default function header() {
       <nav className='navbar fixed-top navbar-expand-lg' data-bs-theme='light'>
         <div className='container-fluid'>
           <Link className='navbar-brand' to='/'>
-            <img className='homeclick' src='/assets/images/data-science.png' />
+            <img className='homeclick' src='/assets/images/hippo-solid.svg' />
           </Link>
           <CollapsedButton key='collapsedButton' />
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
