@@ -7,7 +7,7 @@ export default function generateQuery() {
   const currentSelected = useSelector((state) => state.reducer.currentSelected);
 
   function fetchQuery() {
-    fetch('/server/fetchQuery', {
+    fetch('/server/fetchquery', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,8 +16,8 @@ export default function generateQuery() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.body);
-        dispatch(setCurrentQuery(res.body));
+        console.log(res);
+        dispatch(setCurrentQuery(res.query));
       });
   }
 

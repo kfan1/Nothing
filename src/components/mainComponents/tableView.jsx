@@ -13,6 +13,8 @@ export default function tableView({ postgresURI }) {
   const allTables = useSelector((state) => state.reducer.allTables);
   const currentQuery = useSelector((state) => state.reducer.currentQuery);
 
+  // ADD FUNCTIONALITY TODO fetch from both mongo and postgres databases
+
   function fetchDB(URI, tableName) {
     fetch('/server/db', {
       method: 'POST',
@@ -41,16 +43,21 @@ export default function tableView({ postgresURI }) {
      */
   }
 
+  // ADD FUNCTIONALITY
+  // @TODO create a clear selection button
+
+  // ADD functionality select from multiple tables and create join queries
+
   if (allTables[currentTable]) {
-    let gridWidth = '';
-    allTables[currentTable][0].key.split(',').forEach(() => (gridWidth += ' 1fr'));
     return (
       <div>
         <NewTableForm fetchDB={fetchDB} postgresURI={postgresURI} key={postgresURI} />
         <p>{currentQuery}</p>
         <GenerateQueryButton />
         <h1>{currentTable}</h1>
-        <table className='theActualTableFinally'>{allTables[currentTable]}</table>
+        <table className='theActualTableFinally' key={'theActualTableFinally'}>
+          <tbody key={'theActualTableFinally'}>{allTables[currentTable]}</tbody>
+        </table>
       </div>
     );
   } else {

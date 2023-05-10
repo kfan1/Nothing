@@ -10,7 +10,7 @@ export default function sideBar() {
 
   Object.keys(allTables).forEach((tableName) => {
     navlinks.push(
-      <li>
+      <li key={'unique'+tableName}>
         <a
           className='dropdown-item sidenav-drop'
           onClick={() => {

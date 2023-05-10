@@ -6,8 +6,22 @@ import { setCurrentSelected } from '../../reducers/reducer';
 // change all these replaceAlls to regex
 
 export default function table({ tableValues, tableName }) {
-  const tableTable = [];
   const rowID = tableValues._id;
+  const tableTable = [
+    <td key={'k' + rowID}>
+      <button
+        className='tableButton'
+        id={'k' + rowID}
+        onClick={() => {
+          document
+            .querySelector(`#${'k' + rowID}`)
+            .setAttribute('selected', !JSON.parse(document.querySelector(`#${'k' + rowID}`).getAttribute('selected')));
+          dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: '*', id: tableValues._id, value: '*' })));
+        }}>
+        <i class='fa-solid fa-check'></i>
+      </button>
+    </td>,
+  ];
   const dispatch = useDispatch();
 
   Object.keys(tableValues).forEach((value) => {
@@ -40,7 +54,7 @@ export default function table({ tableValues, tableName }) {
             .replaceAll(':', '')
         : '';
     tableTable.push(
-      <td>
+      <td key={'k' + rowID + newId + valueID}>
         <button
           className='tableButton'
           id={'k' + rowID + newId + valueID}
@@ -51,7 +65,11 @@ export default function table({ tableValues, tableName }) {
                 'selected',
                 !JSON.parse(document.querySelector(`#${'k' + rowID + newId + valueID}`).getAttribute('selected'))
               );
-            dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: value, id: tableValues._id, value: tableValues[value]})));
+            dispatch(
+              setCurrentSelected(
+                JSON.stringify({ tableName, columnName: value, id: tableValues._id, value: tableValues[value] })
+              )
+            );
           }}>
           {tableValues[value]}
         </button>

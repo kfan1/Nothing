@@ -3,7 +3,11 @@ import { useDispatch } from 'react-redux';
 import { setCurrentSelected } from '../../reducers/reducer';
 
 export default function theKeys({ tableKeys, tableName }) {
-  const tableTop = [];
+  const tableTop = [
+    <th key='selectAll'>
+      <button className='tableButtonKey'>Row</button>
+    </th>,
+  ];
   const dispatch = useDispatch();
 
   tableKeys.forEach((key) => {
@@ -22,7 +26,7 @@ export default function theKeys({ tableKeys, tableName }) {
             .replaceAll(':', '')
         : '';
     tableTop.push(
-      <th>
+      <th key={`#${'k' + newId}`}>
         <button
           className='tableButtonKey'
           id={'k' + newId}

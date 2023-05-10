@@ -4,6 +4,7 @@ const userController = require('../controllers/userController');
 const sessionController = require('../controllers/sessionController');
 const cookieController = require('../controllers/cookieController');
 const fetchDBController = require('../controllers/fetchDBController');
+const fetchQueryController = require('../controllers/fetchQueryController')
 
 // ADD FUNCTIONALITY
 // see if username not found or password incorrect or username or password missing when signing up
@@ -39,5 +40,9 @@ router.get('/logout', (req, res) => {
 router.post('/db', fetchDBController.fetchDB, (req, res) => {
   return res.json(res.locals.data);
 });
+
+router.post('/fetchquery', fetchQueryController.fetchQuery, (req, res) => {
+  return res.json({query: res.locals.query})
+})
 
 module.exports = router;
