@@ -18,7 +18,7 @@ export default function table({ tableValues, tableName }) {
             .setAttribute('selected', !JSON.parse(document.querySelector(`#${'k' + rowID}`).getAttribute('selected')));
           dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: '*', id: tableValues._id, value: '*' })));
         }}>
-        <i class='fa-solid fa-check'></i>
+        <i className='fa-solid fa-check'></i>
       </button>
     </td>,
   ];

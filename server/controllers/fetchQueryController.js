@@ -4,6 +4,8 @@ fetchQuery.fetchQuery = (req, res, next) => {
   const tables = new Set();
   const columns = new Set();
   const ids = new Set();
+  if (req.body.length === 0) return next();
+
   for (let i = 0; i < req.body.length; i++) {
     const currObj = JSON.parse(req.body[i]);
     tables.add(currObj.tableName);
