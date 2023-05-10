@@ -48,8 +48,9 @@ export const reducer = createSlice({
         state.currentSelected.splice(state.currentSelected.indexOf(action.payload), 1);
       else state.currentSelected.push(action.payload);
     },
-    setCurrentQuery: (state) => {
-      state.currentQuery = JSON.stringify(state.currentSelected);
+    setCurrentQuery: (state, action) => {
+      // state.currentQuery = JSON.stringify(state.currentSelected);
+      state.currentQuery = action.payload;
     },
   },
 });
