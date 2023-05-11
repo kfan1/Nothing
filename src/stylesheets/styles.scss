@@ -579,3 +579,68 @@ body[theme='light'] .tableButtonKey[selected='true'] {
     transform: scale(0);
   }
 }
+
+// fun button
+.funStuffButton {
+  position: absolute;
+  top: 260px;
+  left: 895px;
+  width: 5px;
+  height: 5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.dancingHippoContainer {
+  position: absolute;
+}
+
+@for $i from 1 through 40 {
+  @keyframes zooming#{$i} {
+    0% {
+      color: rgb(random(255), random(255), random(255));
+      top: random(1080) + px;
+      left: random(1920) + px;
+    }
+    10% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    20% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    30% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    40% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    50% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    60% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    70% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    80% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    90% {
+      color: rgb(random(255), random(255), random(255));
+    }
+    100% {
+      color: rgb(random(255), random(255), random(255));
+      top: random(1080) + px;
+      left: random(1920) + px;
+      transform: scale(60)
+    }
+  }
+
+  .dancingHippo:nth-child(#{$i}) {
+    position: absolute;
+    animation: zooming#{$i};
+    animation-duration: 10s;
+    animation-timing-function: linear;
+  }
+}

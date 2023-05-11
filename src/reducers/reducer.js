@@ -14,6 +14,7 @@ const initialState = {
   selectedButtons: {},
   pastQueries: [],
   loadingState: null,
+  funStuff: [],
 };
 
 export const reducer = createSlice({
@@ -73,10 +74,14 @@ export const reducer = createSlice({
       if (state.selectedButtons[action.payload] === undefined) state.selectedButtons[action.payload] = true;
       else state.selectedButtons[action.payload] = !state.selectedButtons[action.payload];
     },
+    setFunStuff: (state, action) => {
+      state.funStuff = action.payload;
+    },
   },
 });
 
 export const {
+  setFunStuff,
   setLoadingState,
   deleteQuery,
   getPastQueries,
