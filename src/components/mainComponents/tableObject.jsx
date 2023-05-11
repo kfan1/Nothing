@@ -38,6 +38,8 @@ export default function table({ tableValues, tableName }) {
             .replaceAll('\n', '')
             .replaceAll('!', '')
             .replaceAll(':', '')
+            .replaceAll('(', '')
+            .replaceAll(')', '')
         : '';
     const newId =
       typeof tableValues[value] === 'string'
@@ -52,6 +54,8 @@ export default function table({ tableValues, tableName }) {
             .replaceAll('\n', '')
             .replaceAll('!', '')
             .replaceAll(':', '')
+            .replaceAll('(', '')
+            .replaceAll(')', '')
         : '';
     tableTable.push(
       <td key={'k' + rowID + newId + valueID}>

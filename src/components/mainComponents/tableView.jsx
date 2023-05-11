@@ -4,9 +4,9 @@ import NewTableForm from './newTableForm';
 import TheKeys from './theKeys.jsx';
 import TheTable from './tableObject';
 import { setAllTables, setCurrentTable } from '../../reducers/reducer.js';
-import GenerateQueryButton from './generateQueryButton';
-import AddDBButton from './addDBButton';
-import ClearSelectionButton from './clearSelectionButton';
+import GenerateQueryButton from '../Buttons/generateQueryButton';
+import AddDBButton from '../Buttons/addDBButton';
+import ClearSelectionButton from '../Buttons/clearSelectionButton';
 
 export default function tableView({ postgresURI }) {
   const currentTable = useSelector((state) => state.reducer.currentTable);
@@ -57,6 +57,7 @@ export default function tableView({ postgresURI }) {
         <GenerateQueryButton />
         <AddDBButton />
         <ClearSelectionButton />
+        
         <h1>{currentTable}</h1>
         <table className='theActualTableFinally' key={'theActualTableFinally'}>
           <tbody key={'theActualTableFinally'}>{allTables[currentTable]}</tbody>

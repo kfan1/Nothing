@@ -24,6 +24,7 @@ export default function theKeys({ tableKeys, tableName }) {
             .replaceAll('\n', '')
             .replaceAll('!', '')
             .replaceAll(':', '')
+            .replaceAll('(', '')
         : '';
     tableTop.push(
       <th key={`#${'k' + newId}`}>
