@@ -14,8 +14,8 @@ const fetchDB = {};
 
 fetchDB.fetchDB = (req, res, next) => {
   const pool = new Pool({
-    connectionString: req.body.URI,
-    // connectionString: 'postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr',
+    // connectionString: req.body.URI,
+    connectionString: 'postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr',
   });
 
   pool

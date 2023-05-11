@@ -19,7 +19,6 @@ export default function newTableForm({ fetchDB, postgresURI }) {
             onClick={(event) => {
               event.preventDefault();
               fetchDB(postgresURI, document.querySelector('#newTableInput').value);
-              dispatch(setCurrentSelected('delete'));
             }}
           />
         </div>

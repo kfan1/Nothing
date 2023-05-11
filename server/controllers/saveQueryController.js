@@ -3,7 +3,6 @@ const Query = require('../models/queryModel');
 const saveQueryController = {};
 
 saveQueryController.saveQuery = (req, res, next) => {
-  console.log(req.body.user)
   if (req.body.user && req.body.query) {
     Query.create({ username: req.body.user, query: req.body.query })
       .then(() => next())
