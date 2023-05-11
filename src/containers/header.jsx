@@ -16,9 +16,9 @@ export default function header() {
       <ThemeColor key='themeColor' />,
     ];
   else {
-    navlinks = [
-      <NavLink nav='Queries' link='/queries' key='queries' />,
+    navlinks = [      
       <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
+      <NavLink nav='Queries' link='/queries' key='queries' />,
       <NavLink nav='Log out' link='/logout' key='logout' />,
       <ThemeColor key='themeColor' />,
     ];

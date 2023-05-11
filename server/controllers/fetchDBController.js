@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 
 const fetchDB = {};
 
-('mongodb+srv://kevinlifan:8-Ud_2k92zGQJTy@usercluster.7ygqnuk.mongodb.net/?retryWrites=true&w=majority');
+// ('mongodb+srv://kevinlifan:8-Ud_2k92zGQJTy@usercluster.7ygqnuk.mongodb.net/?retryWrites=true&w=majority');
 // ('postgres://dugiykym:qJm5oZ_XWSnzaXF59SxFNBw6JBk1ihwB@drona.db.elephantsql.com/dugiykym');
 // too many of the same name and keys, maybe created wrong wrongs?
 // oohhh i know cause the id is not _id for this powerball, its sid, rip
@@ -14,8 +14,8 @@ const fetchDB = {};
 
 fetchDB.fetchDB = (req, res, next) => {
   const pool = new Pool({
-    // connectionString: req.body.URI,
-    connectionString: 'postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr',
+    connectionString: req.body.URI,
+    // connectionString: 'postgres://tfukflgr:yCPaKQuG5NwStedUWf9Bw3wE9SIcLyE0@castor.db.elephantsql.com/tfukflgr',
   });
 
   pool
