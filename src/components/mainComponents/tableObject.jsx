@@ -8,17 +8,14 @@ import { setCurrentSelected, setSelectedButtons } from '../../reducers/reducer';
 export default function table({ tableValues, tableName }) {
   const dispatch = useDispatch();
 
-
   const rowID = tableValues._id;
   const tableTable = [
     <td key={'k' + rowID}>
       <button
         className='tableButton'
-        id={'k' + rowID}
+        id={'k' + rowID + tableName}
         onClick={() => {
-          document
-            .querySelector(`#${'k' + rowID}`)
-            .setAttribute('selected', !JSON.parse(document.querySelector(`#${'k' + rowID}`).getAttribute('selected')));
+          dispatch(setSelectedButtons('k' + rowID + tableName));
           dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: '*', id: tableValues._id, value: '*' })));
         }}>
         <i className='fa-solid fa-check'></i>

@@ -7,18 +7,22 @@ import ThemeColor from '../components/headerComponents/themeColor.jsx';
 
 export default function header() {
   const loggedIn = useSelector((state) => state.reducer.loggedIn);
-
-  const navlinks = [
-    <NavLink nav='About' link='/about' key='about' />,
-    <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
-  ];
+  let navlinks;
   if (!loggedIn)
-    navlinks.push(
+    navlinks = [
+      <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
       <NavLink nav='Sign Up' link='/signup' key='signup' />,
-      <NavLink nav='Log In' link='/login' key='login' />
-    );
-  else navlinks.push(<NavLink nav='Log out' link='/logout' key='logout' />);
-  navlinks.push(<ThemeColor key='themeColor' />);
+      <NavLink nav='Log In' link='/login' key='login' />,
+      <ThemeColor key='themeColor' />,
+    ];
+  else {
+    navlinks = [
+      <NavLink nav='Queries' link='/queries' key='queries' />,
+      <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
+      <NavLink nav='Log out' link='/logout' key='logout' />,
+      <ThemeColor key='themeColor' />,
+    ];
+  }
 
   return (
     <div>

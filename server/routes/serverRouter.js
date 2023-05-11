@@ -4,7 +4,8 @@ const userController = require('../controllers/userController');
 const sessionController = require('../controllers/sessionController');
 const cookieController = require('../controllers/cookieController');
 const fetchDBController = require('../controllers/fetchDBController');
-const fetchQueryController = require('../controllers/fetchQueryController')
+const fetchQueryController = require('../controllers/fetchQueryController');
+const saveQueryController = require('../controllers/saveQueryController');
 
 // ADD FUNCTIONALITY
 // see if username not found or password incorrect or username or password missing when signing up
@@ -42,7 +43,19 @@ router.post('/db', fetchDBController.fetchDB, (req, res) => {
 });
 
 router.post('/fetchquery', fetchQueryController.fetchQuery, (req, res) => {
-  return res.json({query: res.locals.query})
-})
+  return res.json({ query: res.locals.query });
+});
+
+router.post('/saveQuery', saveQueryController.saveQuery, (req, res) => {
+  return res.sendStatus(200);
+});
+
+router.get('/queries/:username', saveQueryController.getQuery, (req, res) => {
+  return res.json({ queries: res.locals.queries, id: res.locals.queryId });
+});
+
+router.get('/deleteQuery/:query', saveQueryController.deleteQuery, (req, res) => {
+  return res.sendStatus(200);
+});
 
 module.exports = router;

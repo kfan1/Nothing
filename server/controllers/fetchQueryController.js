@@ -4,11 +4,13 @@ fetchQuery.fetchQuery = (req, res, next) => {
   const tables = new Set();
   const columns = new Set();
   const ids = new Set();
-  console.log(req.body);
+
+  console.log(req.body)
+
   if (req.body.currentSelected.length === 0) return next();
   if (req.body.currentJoinTable === null) {
     req.body = req.body.currentSelected;
-    console.log(req.body);
+
 
     for (let i = 0; i < req.body.length; i++) {
       const currObj = JSON.parse(req.body[i]);

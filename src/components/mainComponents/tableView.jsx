@@ -21,7 +21,6 @@ export default function tableView({ postgresURI }) {
 
   useEffect(() => {
     Object.keys(selectedButtons).forEach((key) => {
-      console.log(selectedButtons[key]);
       if (document.querySelector(`#${key}`)) {
         document
           .querySelector(`#${key}`)

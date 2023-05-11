@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setCurrentSelected } from '../../reducers/reducer';
+import { setCurrentSelected, setSelectedButtons } from '../../reducers/reducer';
 
 export default function theKeys({ tableKeys, tableName }) {
   const tableTop = [
@@ -30,14 +30,9 @@ export default function theKeys({ tableKeys, tableName }) {
       <th key={`#${'k' + newId}`}>
         <button
           className='tableButtonKey'
-          id={'k' + newId}
+          id={'k' + newId + tableName}
           onClick={() => {
-            document
-              .querySelector(`#${'k' + newId}`)
-              .setAttribute(
-                'selected',
-                !JSON.parse(document.querySelector(`#${'k' + newId}`).getAttribute('selected'))
-              );
+            dispatch(setSelectedButtons('k' + newId + tableName));
             dispatch(setCurrentSelected(JSON.stringify({ tableName, columnName: key, id: '*' })));
           }}>
           {key}

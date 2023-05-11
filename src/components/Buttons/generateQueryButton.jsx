@@ -7,6 +7,7 @@ export default function generateQuery() {
   const currentSelected = useSelector((state) => state.reducer.currentSelected);
   const currentJoinTable = useSelector((state) => state.reducer.currentJoinTable);
   const allTables = useSelector((state) => state.reducer.allTables);
+  const currentUser = useSelector((state) => state.reducer.currentUser);
 
   function fetchQuery() {
     const sendObj = { currentSelected, currentJoinTable };
@@ -17,8 +18,8 @@ export default function generateQuery() {
         break;
       }
     }
-    
-    if(separateJoinTable) sendObj.joinTable = allTables[currentJoinTable]
+
+    if (separateJoinTable) sendObj.joinTable = allTables[currentJoinTable];
 
     fetch('/server/fetchquery', {
       method: 'POST',
@@ -30,6 +31,13 @@ export default function generateQuery() {
       .then((res) => res.json())
       .then((res) => {
         dispatch(setCurrentQuery(res.query));
+        fetch('/server/saveQuery', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query: res.query, user: currentUser }),
+        });
       });
   }
 

@@ -12,7 +12,7 @@ const initialState = {
   currentQuery: null,
   currentJoinTable: null,
   selectedButtons: {},
-
+  pastQueries: []
 };
 
 export const reducer = createSlice({
@@ -24,6 +24,15 @@ export const reducer = createSlice({
     // doesn't actually mutate the state because it uses the Immer library,
     // which detects changes to a "draft state" and produces a brand new
     // immutable state based off those changes
+    getPastQueries: (state, action) =>{
+      state.pastQueries = action.payload
+    },
+    deleteQuery: (state, action) => {
+      console.log(action.payload)
+      console.log('location', state.pastQueries.indexOf(action.payload))
+      console.log(state.pastQueries)
+      state.pastQueries.splice(state.pastQueries.indexOf(action.payload), 1)
+    },
     loggingIn: (state, action) => {
       state.loggedIn = action.payload;
     },
@@ -59,14 +68,16 @@ export const reducer = createSlice({
       state.currentJoinTable = action.payload;
     },
     setSelectedButtons: (state, action) => {
-      if(action.payload === 'delete') state.selectedButtons = {}
-      if(state.selectedButtons[action.payload] === undefined) state.selectedButtons[action.payload] = true;
+      if (action.payload === 'delete') state.selectedButtons = {};
+      if (state.selectedButtons[action.payload] === undefined) state.selectedButtons[action.payload] = true;
       else state.selectedButtons[action.payload] = !state.selectedButtons[action.payload];
-    }
+    },
   },
 });
 
 export const {
+  deleteQuery,
+  getPastQueries,
   loggingIn,
   tryingToLogIn,
   changeTheme,
@@ -77,7 +88,7 @@ export const {
   setCurrentSelected,
   setCurrentQuery,
   setCurrentJoinTable,
-  setSelectedButtons
+  setSelectedButtons,
 } = reducer.actions;
 
 export default reducer.reducer;

@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/mainPage.jsx';
 import SignUp from './pages/signUpPage.jsx';
 import LogIn from './pages/logInPage.jsx';
-import About from './pages/aboutPage.jsx';
+import Queries from './pages/queryPage.jsx';
 import './stylesheets/styles.scss';
 import { loggingIn, setUser } from './reducers/reducer.js';
 import { useDispatch } from 'react-redux';
@@ -33,7 +33,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<LogIn />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/queries' element={<Queries />} />
       </Routes>
       <FooterContainer />
     </div>

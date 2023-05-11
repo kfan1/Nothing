@@ -178,6 +178,7 @@ li {
 // Main div
 .main-div {
   padding-left: 250px;
+  padding-right: 250px;
   padding-top: 100px;
   min-height: 100%;
 }
@@ -413,4 +414,18 @@ body[theme='light'] .tableButtonKey[selected='true'] {
   display: inline;
   height: 40px;
   top: -2px;
+}
+
+// Query Page
+.pastQueryButton {
+  margin-bottom: 20px;
+}
+
+.deleteQueryButton:hover {
+  cursor: pointer;
+}
+
+.gapHere {
+  display: inline-block;
+  width: 20px;
 }
