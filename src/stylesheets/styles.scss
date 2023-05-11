@@ -27,7 +27,7 @@ body[theme='light'] {
 
 //  NavBar Styles
 .navbar {
-  padding: 0.4% 10%;
+  padding: 0.4% 15%;
   background-color: rgba(17, 22, 73, 0.4);
   font-weight: 600;
 }
@@ -86,7 +86,6 @@ body[theme='light'] {
 
 .dropdown-menu {
   background-color: $tertiary;
-  max-width: 20px;
 }
 
 .fa-solid {
@@ -103,7 +102,7 @@ body[theme='light'] {
 // sidebar styling
 .sidenav {
   height: 100%;
-  width: 180px;
+  width: 220px;
   position: fixed;
   z-index: 0;
   top: 0;
@@ -382,15 +381,36 @@ body[theme='light'] .tableButtonKey[selected='true'] {
 }
 
 .clearSelectionButton {
- background-color: rgb(255, 58, 58);
- color: white;
- border: solid;
- border-radius: 3px;
- border-color: black;
- border-width: 1px;
- margin-left: 10%;
+  background-color: rgb(255, 58, 58);
+  color: white;
+  border: solid;
+  border-radius: 3px;
+  border-color: black;
+  border-width: 1px;
+  margin-left: 10%;
+  height: 38px;
 }
 
 .clearSelectionButton:hover {
   background-color: rgb(255, 0, 0);
- }
+}
+
+.selectJoinTable {
+  background-color: rgb(63, 187, 52);
+  color: white;
+  border: solid;
+  border-radius: 3px;
+  border-color: black;
+  border-width: 1px;
+  margin-left: 10px;
+}
+
+.selectJoinTable:hover {
+  background-color: rgb(69, 170, 60);
+}
+
+.nextToTheOtherButtons {
+  display: inline;
+  height: 40px;
+  top: -2px;
+}

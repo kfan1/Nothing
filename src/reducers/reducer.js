@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   loggedIn: null,
@@ -10,6 +10,7 @@ const initialState = {
   allTables: {},
   currentSelected: [],
   currentQuery: null,
+  currentJoinTable: null,
 };
 
 export const reducer = createSlice({
@@ -52,6 +53,9 @@ export const reducer = createSlice({
       // state.currentQuery = JSON.stringify(state.currentSelected);
       state.currentQuery = action.payload;
     },
+    setCurrentJoinTable: (state, action) => {
+      state.currentJoinTable = action.payload;
+    },
   },
 });
 
@@ -65,6 +69,7 @@ export const {
   setAllTables,
   setCurrentSelected,
   setCurrentQuery,
+  setCurrentJoinTable
 } = reducer.actions;
 
 export default reducer.reducer;

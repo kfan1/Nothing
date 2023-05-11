@@ -5,6 +5,7 @@ import { setCurrentQuery } from '../../reducers/reducer';
 export default function generateQuery() {
   const dispatch = useDispatch();
   const currentSelected = useSelector((state) => state.reducer.currentSelected);
+  const currentJoinTable = useSelector((state) => state.reducer.currentJoinTable);
 
   function fetchQuery() {
     fetch('/server/fetchquery', {
@@ -12,7 +13,7 @@ export default function generateQuery() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(currentSelected),
+      body: JSON.stringify({currentSelected, currentJoinTable}),
     })
       .then((res) => res.json())
       .then((res) => {
