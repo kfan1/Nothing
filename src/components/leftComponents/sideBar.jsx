@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentSelected, setCurrentTable } from '../../reducers/reducer';
+import { setCurrentTable } from '../../reducers/reducer';
 
 export default function sideBar() {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ export default function sideBar() {
           className='dropdown-item sidenav-drop'
           onClick={() => {
             dispatch(setCurrentTable(tableName));
-            dispatch(setCurrentSelected('delete'));
           }}>
           {tableName}
         </a>

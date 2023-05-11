@@ -10,9 +10,14 @@ export default function SelectJoinTableDropdown({ table }) {
       <a
         class='dropdown-item tableDropdown'
         onClick={() => {
-          document.querySelectorAll('.checkMarkJoin').forEach((el) => (el.innerHTML = ''));
-          document.querySelector(`#${table}dropdown`).innerHTML = '<i class="fa-solid fa-check"></i>';
-          dispatch(setCurrentJoinTable(table));
+          if (document.querySelector(`#${table}dropdown`).innerHTML === '<i class="fa-solid fa-check"></i>') {
+            document.querySelectorAll('.checkMarkJoin').forEach((el) => (el.innerHTML = ''));
+            dispatch(setCurrentJoinTable(null));
+          } else {
+            document.querySelectorAll('.checkMarkJoin').forEach((el) => (el.innerHTML = ''));
+            document.querySelector(`#${table}dropdown`).innerHTML = '<i class="fa-solid fa-check"></i>';
+            dispatch(setCurrentJoinTable(table));
+          }
         }}>
         {table}
         <span className='checkMarkJoin' id={`${table}dropdown`}></span>
