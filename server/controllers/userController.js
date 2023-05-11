@@ -25,6 +25,7 @@ userController.verifyUser = (req, res, next) => {
     } else {
       user.comparePassword(req.body.password, function (err, isMatch) {
         res.locals.signedIn = isMatch;
+        res.locals.id = user._id;
         return next();
       });
     }

@@ -31,6 +31,9 @@ export default function generateQuery() {
       .then((res) => res.json())
       .then((res) => {
         dispatch(setCurrentQuery(res.query));
+        return res;
+      })
+      .then((res) => {
         fetch('/server/saveQuery', {
           method: 'POST',
           headers: {

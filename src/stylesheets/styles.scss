@@ -178,9 +178,25 @@ li {
 // Main div
 .main-div {
   padding-left: 250px;
-  padding-right: 250px;
+  padding-right: 100px;
   padding-top: 100px;
   min-height: 100%;
+}
+form {
+  min-width: 400px;
+}
+
+@media screen and (max-width: 990px) {
+  .main-div {
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+  }
+  form {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
+  }
 }
 
 // Signup Page Styles
@@ -191,6 +207,7 @@ li {
 
 .form-control {
   width: 25%;
+  min-width: 400px;
 }
 
 @media screen and (max-width: 990px) {
@@ -201,6 +218,7 @@ li {
   .main-div {
     text-align: center;
     padding-left: 0;
+    padding-right: 0;
   }
 
   .mb-3 {
@@ -211,6 +229,15 @@ li {
     margin-left: auto;
     margin-right: auto;
   }
+  .addDbButtonOnFirstScreen {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.addDbButtonOnFirstScreen {
+  margin-left: -10px;
+  min-width: 400px;
 }
 
 // Footer

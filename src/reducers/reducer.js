@@ -28,9 +28,6 @@ export const reducer = createSlice({
       state.pastQueries = action.payload
     },
     deleteQuery: (state, action) => {
-      console.log(action.payload)
-      console.log('location', state.pastQueries.indexOf(action.payload))
-      console.log(state.pastQueries)
       state.pastQueries.splice(state.pastQueries.indexOf(action.payload), 1)
     },
     loggingIn: (state, action) => {

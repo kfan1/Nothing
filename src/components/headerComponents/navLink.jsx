@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 export default function navLink({ nav, link }) {
   const dispatch = useDispatch();
+
   let linker;
   if (link === '/logout')
     linker = (
@@ -19,7 +20,7 @@ export default function navLink({ nav, link }) {
         to={link}
         href={link}
         onClick={() => {
-          dispatch(tryingToLogIn(null));
+          dispatch(tryingToLogIn(null));          
         }}>
         {nav}
       </Link>

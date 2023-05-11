@@ -22,9 +22,7 @@ export default function tableView({ postgresURI }) {
   useEffect(() => {
     Object.keys(selectedButtons).forEach((key) => {
       if (document.querySelector(`#${key}`)) {
-        document
-          .querySelector(`#${key}`)
-          .setAttribute('selected', selectedButtons[key]);
+        document.querySelector(`#${key}`).setAttribute('selected', selectedButtons[key]);
       }
     });
   });
@@ -80,7 +78,7 @@ export default function tableView({ postgresURI }) {
     return (
       <div>
         <NewTableForm fetchDB={fetchDB} postgresURI={postgresURI} key={postgresURI} />
-        <div style={{ marginLeft: '-10px' }}>
+        <div className='addDbButtonOnFirstScreen'>
           <AddDBButton />
         </div>
       </div>
