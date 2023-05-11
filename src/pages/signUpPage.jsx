@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { tryingToLogIn, loggingIn } from '../reducers/reducer';
+import { tryingToLogIn, loggingIn, setUser } from '../reducers/reducer';
 import { useNavigate } from 'react-router-dom';
 
 export default function signUpPage() {
@@ -18,6 +18,7 @@ export default function signUpPage() {
     })
       .then((res) => res.json())
       .then((res) => {
+        dispatch(setUser(res.id));
         dispatch(tryingToLogIn(res.loggedIn));
         if (res.loggedIn) {
           dispatch(loggingIn(res.loggedIn));

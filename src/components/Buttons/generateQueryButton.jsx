@@ -40,6 +40,7 @@ export default function generateQuery() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ query: res.query, user: currentUser }),
+        }).then(() => {
         });
       });
   }

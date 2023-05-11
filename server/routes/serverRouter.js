@@ -16,7 +16,7 @@ router.post(
   cookieController.setSSIDCookie,
   sessionController.startSession,
   (req, res) => {
-    return res.json({ loggedIn: res.locals.signedIn });
+    return res.json({ loggedIn: res.locals.signedIn, id: res.locals.id });
   }
 );
 
@@ -46,13 +46,9 @@ router.post('/fetchquery', fetchQueryController.fetchQuery, (req, res) => {
   return res.json({ query: res.locals.query });
 });
 
-router.post(
-  '/saveQuery',
-  saveQueryController.saveQuery,
-  (req, res) => {
-    return res.sendStatus(200);
-  }
-);
+router.post('/saveQuery', saveQueryController.saveQuery, (req, res) => {
+  return res.sendStatus(200);
+});
 
 router.get('/queries/:username', saveQueryController.getQuery, (req, res) => {
   return res.json({ queries: res.locals.queries, id: res.locals.queryId });

@@ -12,7 +12,8 @@ const initialState = {
   currentQuery: null,
   currentJoinTable: null,
   selectedButtons: {},
-  pastQueries: []
+  pastQueries: [],
+  loadingState: null,
 };
 
 export const reducer = createSlice({
@@ -24,11 +25,14 @@ export const reducer = createSlice({
     // doesn't actually mutate the state because it uses the Immer library,
     // which detects changes to a "draft state" and produces a brand new
     // immutable state based off those changes
-    getPastQueries: (state, action) =>{
-      state.pastQueries = action.payload
+    setLoadingState: (state, action) => {
+      state.loadingState = action.payload;
+    },
+    getPastQueries: (state, action) => {
+      state.pastQueries = action.payload;
     },
     deleteQuery: (state, action) => {
-      state.pastQueries.splice(state.pastQueries.indexOf(action.payload), 1)
+      state.pastQueries.splice(state.pastQueries.indexOf(action.payload), 1);
     },
     loggingIn: (state, action) => {
       state.loggedIn = action.payload;
@@ -73,6 +77,7 @@ export const reducer = createSlice({
 });
 
 export const {
+  setLoadingState,
   deleteQuery,
   getPastQueries,
   loggingIn,

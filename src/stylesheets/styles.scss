@@ -456,3 +456,117 @@ body[theme='light'] .tableButtonKey[selected='true'] {
   display: inline-block;
   width: 20px;
 }
+
+.queryList {
+  padding-top: 10px;
+  font-weight: 500;
+}
+
+// Loading
+.center {
+  position: absolute;
+  left: 35%;
+  display: flex;
+  background: rgba(0, 0, 0, 0)
+}
+.wave0 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave1 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.1s;
+}
+.wave2 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.2s;
+}
+.wave3 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.3s;
+}
+.wave4 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.4s;
+}
+.wave5 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.5s;
+}
+.wave6 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.6s;
+}
+.wave7 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.7s;
+}
+.wave8 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.8s;
+}
+.wave9 {
+  width: 5px;
+  height: 50px;
+  // background: linear-gradient(45deg, rgb(2, 0, 114), #6dbcfd);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

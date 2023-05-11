@@ -8,7 +8,8 @@ userController.createUser = async (req, res, next) => {
   }
 
   try {
-    await User.create({ username: req.body.username, password: req.body.password });
+    const user = await User.create({ username: req.body.username, password: req.body.password });
+    res.locals.id = user._id
     res.locals.signedIn = true;
     return next();
   } catch {
