@@ -50,6 +50,7 @@ fetchQuery.fetchQuery = (req, res, next) => {
       if (JSON.parse(req.body.currentSelected[i]).tableName !== req.body.currentJoinTable) {
         let currentTableNameSingular;
         if (JSON.parse(req.body.currentSelected[i]).tableName === 'planets') currentTableNameSingular = 'homeworld';
+        else currentTableNameSingular = JSON.parse(req.body.currentSelected[i]).tableName;
         onJoin = `${req.body.currentJoinTable}.${currentTableNameSingular}_id = ${
           JSON.parse(req.body.currentSelected[i]).tableName
         }._id`;
