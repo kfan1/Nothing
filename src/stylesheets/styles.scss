@@ -6,6 +6,7 @@ $white: rgb(255, 255, 255);
 
 body {
   background-color: $superLightGrey;
+  transition: 2s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -273,6 +274,14 @@ form {
   font-size: 12vw;
 }
 
+.front-hippo {
+  transition: 3s;
+}
+
+.front-hippo:hover {
+  transform: scale(2) rotate(1440deg) translate(25vw);
+}
+
 .frontPageText {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -467,7 +476,7 @@ body[theme='light'] .tableButtonKey[selected='true'] {
   position: absolute;
   left: 35%;
   display: flex;
-  background: rgba(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0);
 }
 .wave0 {
   width: 5px;
