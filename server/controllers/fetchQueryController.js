@@ -48,7 +48,9 @@ fetchQuery.fetchQuery = (req, res, next) => {
     let joinTableTable = req.body.currentJoinTable;
     for (let i = 0; i < req.body.currentSelected.length; i++) {
       if (JSON.parse(req.body.currentSelected[i]).tableName !== req.body.currentJoinTable) {
-        onJoin = `${req.body.currentJoinTable}.${JSON.parse(req.body.currentSelected[i]).tableName}_id = ${
+        let currentTableNameSingular;
+        if (JSON.parse(req.body.currentSelected[i]).tableName === 'planets') currentTableNameSingular = 'homeworld';
+        onJoin = `${req.body.currentJoinTable}.${currentTableNameSingular}_id = ${
           JSON.parse(req.body.currentSelected[i]).tableName
         }._id`;
         break;
@@ -104,7 +106,6 @@ fetchQuery.fetchQuery = (req, res, next) => {
         let currentTableNameSingular;
         if (JSON.parse(req.body.currentSelected[i]).tableName === 'people') currentTableNameSingular = 'person';
         if (JSON.parse(req.body.currentSelected[i]).tableName === 'films') currentTableNameSingular = 'film';
-        if (JSON.parse(req.body.currentSelected[i]).tableName === 'films') currentTableNameSingular = 'film';
         onJoin.push(
           `${JSON.parse(req.body.currentSelected[i]).tableName}._id = ${joinTableTable}.${currentTableNameSingular}_id`
         );
@@ -144,7 +145,7 @@ fetchQuery.fetchQuery = (req, res, next) => {
     res.locals.query += ` ON ${onJoin[0]} INNER JOIN`;
 
     res.locals.query += ` ${tables[1]}`;
-    
+
     res.locals.query += ` ON ${onJoin[1]}`;
 
     res.locals.query += ` WHERE ${tables[0]}._id in (`;
