@@ -11,6 +11,8 @@ const initialState = {
   currentSelected: [],
   currentQuery: null,
   currentJoinTable: null,
+  selectedButtons: {},
+
 };
 
 export const reducer = createSlice({
@@ -56,6 +58,11 @@ export const reducer = createSlice({
     setCurrentJoinTable: (state, action) => {
       state.currentJoinTable = action.payload;
     },
+    setSelectedButtons: (state, action) => {
+      if(action.payload === 'delete') state.selectedButtons = {}
+      if(state.selectedButtons[action.payload] === undefined) state.selectedButtons[action.payload] = true;
+      else state.selectedButtons[action.payload] = !state.selectedButtons[action.payload];
+    }
   },
 });
 
@@ -69,7 +76,8 @@ export const {
   setAllTables,
   setCurrentSelected,
   setCurrentQuery,
-  setCurrentJoinTable
+  setCurrentJoinTable,
+  setSelectedButtons
 } = reducer.actions;
 
 export default reducer.reducer;

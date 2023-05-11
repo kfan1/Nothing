@@ -1,11 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setCurrentSelected } from '../../reducers/reducer';
+import { setCurrentSelected, setSelectedButtons } from '../../reducers/reducer';
 
 // ADD FUNCTIONALITY
 // change all these replaceAlls to regex
 
 export default function table({ tableValues, tableName }) {
+  const dispatch = useDispatch();
+
+
   const rowID = tableValues._id;
   const tableTable = [
     <td key={'k' + rowID}>
@@ -22,7 +25,6 @@ export default function table({ tableValues, tableName }) {
       </button>
     </td>,
   ];
-  const dispatch = useDispatch();
 
   Object.keys(tableValues).forEach((value) => {
     const valueID =
@@ -63,12 +65,7 @@ export default function table({ tableValues, tableName }) {
           className='tableButton'
           id={'k' + rowID + newId + valueID}
           onClick={() => {
-            document
-              .querySelector(`#${'k' + rowID + newId + valueID}`)
-              .setAttribute(
-                'selected',
-                !JSON.parse(document.querySelector(`#${'k' + rowID + newId + valueID}`).getAttribute('selected'))
-              );
+            dispatch(setSelectedButtons('k' + rowID + newId + valueID));
             dispatch(
               setCurrentSelected(
                 JSON.stringify({ tableName, columnName: value, id: tableValues._id, value: tableValues[value] })

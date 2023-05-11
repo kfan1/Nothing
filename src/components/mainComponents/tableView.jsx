@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import NewTableForm from './newTableForm';
 import TheKeys from './theKeys.jsx';
@@ -15,8 +15,20 @@ export default function tableView({ postgresURI }) {
   const dispatch = useDispatch();
   const allTables = useSelector((state) => state.reducer.allTables);
   const currentQuery = useSelector((state) => state.reducer.currentQuery);
+  const selectedButtons = useSelector((state) => state.reducer.selectedButtons);
 
   // ADD FUNCTIONALITY TODO fetch from both mongo and postgres databases
+
+  useEffect(() => {
+    Object.keys(selectedButtons).forEach((key) => {
+      console.log(selectedButtons[key]);
+      if (document.querySelector(`#${key}`)) {
+        document
+          .querySelector(`#${key}`)
+          .setAttribute('selected', selectedButtons[key]);
+      }
+    });
+  });
 
   function fetchDB(URI, tableName) {
     fetch('/server/db', {
