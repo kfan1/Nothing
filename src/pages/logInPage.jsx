@@ -9,7 +9,7 @@ export default function logInPage() {
   const navigate = useNavigate();
 
   const login = (username, password) => {
-    fetch('server/login', {
+    fetch('/server/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

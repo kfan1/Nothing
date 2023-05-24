@@ -2,13 +2,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/my-app
 
-# testing
-/coverage
-
-# production
-/build
 
 # misc
 .DS_Store

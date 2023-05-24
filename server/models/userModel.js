@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mongoURI =
-  'mongodb+srv://kevinlifan:8-Ud_2k92zGQJTy@usercluster.7ygqnuk.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://kevinlifan:JpDlY94rtxnSRI3V@cluster0.wz3t5tp.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'users' });
 
 const SALT_WORK_FACTOR = 10;

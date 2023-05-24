@@ -9,7 +9,9 @@ export default function bottomLinks() {
       <a className='bottom-links' href='https://www.github.com/kfan1'>
         GitHub
       </a>
-      <p className='copyright'>© 2023 Kevin Fan</p>
+      <p className='copyright'>
+        Built with <span style={{ color: 'red' }}>♥</span> ©2023 Kevin Fan
+      </p>
     </div>
   );
 }

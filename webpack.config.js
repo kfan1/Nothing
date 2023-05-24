@@ -23,12 +23,12 @@ module.exports = {
     // fallback to root for other urls
     historyApiFallback: true,
 
-    static: {
-      // match the output path
-      directory: path.resolve(__dirname, 'dist'),
-      // match the output 'publicPath'
-      publicPath: '/',
-    },
+    // static: {
+    //   // match the output path
+    //   directory: path.resolve(__dirname, 'dist'),
+    //   // match the output 'publicPath'
+    //   publicPath: '/',
+    // },
 
     headers: { 'Access-Control-Allow-Origin': '*' },
     /**

@@ -6,6 +6,9 @@ fetchQuery.fetchQuery = (req, res, next) => {
   const ids = new Set();
 
   if (req.body.currentSelected.length === 0) return next();
+  // future option object will contain {_id: id} if ID for table is not exactly '_id'
+  // if no '_id' config object send, assumed id for tables to be '_id'
+  // if no join table at all
   if (req.body.currentJoinTable === null) {
     req.body = req.body.currentSelected;
 
@@ -43,7 +46,13 @@ fetchQuery.fetchQuery = (req, res, next) => {
     if (ids.has('*')) res.locals.query = res.locals.query.slice(0, res.locals.query.indexOf(' WHERE'));
 
     return next();
-  } else if (req.body.joinTable === undefined) {
+  }
+  // if there is no separate specific join table (ie one of the tables sent in doubles as a join table and includes 'otherTable_id')
+  else if (req.body.joinTable === undefined) {
+    // future fetch requests will include and object that contains the plural and singular names for tables if inconsistent or non 's' pluralization
+    // ex {planets: homeworld} or {people: person}
+    // currentTableNameSingular will be set equal to the singular
+    // all other tables will be assumed to be pluralized with an 's'
     let onJoin;
     let joinTableTable = req.body.currentJoinTable;
     for (let i = 0; i < req.body.currentSelected.length; i++) {
@@ -98,7 +107,9 @@ fetchQuery.fetchQuery = (req, res, next) => {
     if (ids.has('*')) res.locals.query = res.locals.query.slice(0, res.locals.query.indexOf(' WHERE'));
 
     return next();
-  } else {
+  }
+  // if there is separate unique join table
+  else {
     let onJoin = [];
     let doneTable = new Set();
     let joinTableTable = req.body.currentJoinTable;

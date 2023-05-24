@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kfan1/MessingAround.git"
+    "url": "git+https://github.com/kfan1/Nothing.git"
   },
   "author": "kevinlifan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kfan1/MessingAround/issues"
+    "url": "https://github.com/kfan1/Nothing/issues"
   },
-  "homepage": "https://github.com/kfan1/MessingAround#readme",
+  "homepage": "https://github.com/kfan1/Nothing",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "bcrypt": "^5.1.0",
