@@ -18,6 +18,7 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
+    open: true,
     // enable HMR on the devServer
     hot: true,
     // fallback to root for other urls
