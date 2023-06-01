@@ -6,6 +6,7 @@
   "author": "kevinlifan",
   "license": "MIT",
   "scripts": {
+    "preinstall": "npm install --global nodemon",
     "server": "cross-env NODE_ENV=production nodemon ./server/server.js",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color \" \"cross-env NODE_ENV=development nodemon ./server/server.js\"",
     "build": "cross-env NODE_ENV=production webpack"
