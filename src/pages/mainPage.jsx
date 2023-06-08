@@ -10,12 +10,18 @@ export default function mainPage() {
   let sideBar = [];
   if (loggedIn) sideBar.push(<SideBar key={'sidebar'} />);
 
-  return loggedIn ? (
-    <div>
-      {sideBar}
-      <MainContainer />
-    </div>
-  ) : (
+  // forced public container for github static pages
+  // return loggedIn ? (
+  //   <div>
+  //     {sideBar}
+  //     <MainContainer />
+  //   </div>
+  // ) : (
+  // <div>
+  //   <PublicContainer />
+  // </div>
+  // );
+  return (
     <div>
       <PublicContainer />
     </div>
