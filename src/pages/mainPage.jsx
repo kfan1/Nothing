@@ -11,19 +11,19 @@ export default function mainPage() {
   if (loggedIn) sideBar.push(<SideBar key={'sidebar'} />);
 
   // forced public container for github static pages
-  // return loggedIn ? (
-  //   <div>
-  //     {sideBar}
-  //     <MainContainer />
-  //   </div>
-  // ) : (
-  // <div>
-  //   <PublicContainer />
-  // </div>
-  // );
-  return (
+  return loggedIn ? (
+    <div>
+      {sideBar}
+      <MainContainer />
+    </div>
+  ) : (
     <div>
       <PublicContainer />
     </div>
   );
+  // return (
+  //   <div>
+  //     <PublicContainer />
+  //   </div>
+  // );
 }
