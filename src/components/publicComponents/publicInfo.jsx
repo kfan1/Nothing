@@ -12,11 +12,11 @@ export default function publicInfo() {
             between them with ease. Databases and tables will be saved for future access.
           </p>
         </div>
-        <img className='publicInfoPictures' src='/assets/images/Postgresql_elephant.svg.png' />
+        <img className='publicInfoPictures' src='assets/images/Postgresql_elephant.svg.png' />
       </div>
       <hr className='publicInfoBreaks'></hr>
       <div className='publicInformation'>
-        <img className='publicInfoPictures' src='/assets/images/data-science.png' />
+        <img className='publicInfoPictures' src='assets/images/data-science.png' />
         <div>
           <p className='publicInfoHeaders'>Simple and easy to use</p>
           <p className='publicInfoInfo'>
@@ -42,12 +42,12 @@ export default function publicInfo() {
       <hr className='publicInfoBreaks'></hr>
       <div className='publicInformation'>
         <div className='publicSmallIcons'>
-          <img className='smallLogos' src='/assets/images/React-icon.svg.png'/>
-          <img className='smallLogos' src='/assets/images/redux-logo.png'/>
-          <img className='smallLogos' src='/assets/images/express-js.png'/>
-          <img className='smallLogos bottomLogos' src='/assets/images/mongodb.png'/>
-          <img className='smallLogos bottomLogos webpack' src='/assets/images/webpack.png'/>
-          <img className='smallLogos bottomLogos' src='/assets/images/bcrypt.png'/>
+          <img className='smallLogos' src='assets/images/React-icon.svg.png'/>
+          <img className='smallLogos' src='assets/images/redux-logo.png'/>
+          <img className='smallLogos' src='assets/images/express-js.png'/>
+          <img className='smallLogos bottomLogos' src='assets/images/mongodb.png'/>
+          <img className='smallLogos bottomLogos webpack' src='assets/images/webpack.png'/>
+          <img className='smallLogos bottomLogos' src='assets/images/bcrypt.png'/>
         </div>
         <div>
           <p className='publicInfoHeaders'>Fast and Secure</p>

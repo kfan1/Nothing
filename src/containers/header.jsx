@@ -16,7 +16,7 @@ export default function header() {
       <ThemeColor key='themeColor' />,
     ];
   else {
-    navlinks = [      
+    navlinks = [
       <NavLink nav='Projects' link='https://www.github.com/kfan1' key='projects' />,
       <NavLink nav='Queries' link='/queries' key='queries' />,
       <NavLink nav='Log out' link='/logout' key='logout' />,
@@ -29,7 +29,7 @@ export default function header() {
       <nav className='navbar fixed-top navbar-expand-lg' data-bs-theme='light'>
         <div className='container-fluid'>
           <Link className='navbar-brand' to='/'>
-            <img className='homeclick' src='/assets/images/hippo-solid.svg' />
+            <img className='homeclick' src='assets/images/hippo-solid.svg' />
           </Link>
           <CollapsedButton key='collapsedButton' />
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>

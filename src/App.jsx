@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     async function myFunction() {
       await fetch('/server/isLoggedIn')
@@ -24,7 +24,6 @@ function App() {
     }
     myFunction();
   });
-
 
   return (
     <div>
