@@ -25,7 +25,6 @@ app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
 });
 
-
 // TODO: add error handling for all promises
 
 // TODO add functionality add OAUTH
